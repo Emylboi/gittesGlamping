@@ -9,6 +9,7 @@ import userRouter from "./routes/users/user.route.js";
 import usersRouter from "./routes/users/users.route.js";
 import staysRouter from "./routes/stays/stays.route.js";
 import stayRouter from "./routes/stays/stay.route.js";
+import authRouter from "./routes/auth/auth.js";
 
 const expressServer = express();
 const server = {};
@@ -34,6 +35,7 @@ expressServer.use(userRouter);
 expressServer.use(usersRouter);
 expressServer.use(stayRouter);
 expressServer.use(staysRouter);
+expressServer.use(authRouter);
 
 /* expressServer.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/dist", "index.html"));
