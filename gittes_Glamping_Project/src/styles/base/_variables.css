@@ -1,0 +1,18 @@
+:root {
+
+
+    --font-tillium: "Titillium Web";
+    --font-quick: "Quicksand";
+
+    --primary-font: var(--font-tillium);
+
+    --mc-color-green : #3a6465;
+    --mc-color-yellow : #e6a044;
+    --mc-color-orange : #ff6634;
+     
+
+    --base-text-color : #213547;
+    --base-background-color : #fff;
+    
+}
+
