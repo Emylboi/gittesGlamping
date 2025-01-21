@@ -12,6 +12,7 @@
 @import '_button.css';
 @import '_typograhy.css';
 @import '_variables.css';
+@import '_font.css';
 
 :root {
 
@@ -31,6 +32,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -75,6 +78,12 @@ a {
   }
 }
 
+h1, h2, h3, h4, h5, h6, a, button {
+    font-family: var(--primary-font);
+}
 
+p{
+    font-family: var(--secondary-font);
+}
 
 

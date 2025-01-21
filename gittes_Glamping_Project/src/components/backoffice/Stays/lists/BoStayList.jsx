@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./boStayList.module.css";
+
+/* This component shows the list of all our stays in the backoffice section. */
 const BoStayList = ({ stays, deleteStay }) => {
   const navigate = useNavigate();
 
@@ -32,15 +34,16 @@ const BoStayList = ({ stays, deleteStay }) => {
               title,
               description,
               numberOfPersons,
-              picture,
+              image,
               price,
               includes
             } = stay;
 
+            /* lists the information of each stay in the backoffice section, based on id's */
             return (
               <tr key={_id}>
                 <td>
-                  <img src={picture}></img>
+                  <img src={image}></img>
                 </td>
                 <td>{title}</td>
                 <td>{description}</td>

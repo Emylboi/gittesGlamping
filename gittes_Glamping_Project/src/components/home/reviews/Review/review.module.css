@@ -1,0 +1,16 @@
+.review{
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    margin: 5vh 0;
+}
+
+.content{
+    background-color: var(--sectionDescriptionButton-color);
+    color: var(--whiteFont-color);
+    width: 90%;
+    padding: 25px;
+    text-align: center;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}

@@ -1,7 +1,7 @@
 .container{
     width: 100%;
-    background-color: #2a4f57;
-    color: white;
+    background-color: var(--sectionFooter-color);
+    color: var(--whiteFont-color);
 }
 
 .title{

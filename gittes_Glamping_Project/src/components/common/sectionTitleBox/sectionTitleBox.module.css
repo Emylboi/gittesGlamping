@@ -1,0 +1,21 @@
+.sectionTitleBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content{
+    background-color: var(--sectionTitleBox-color);
+    color: var(--whiteFont-color);
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.title{
+    font-size: 5rem;
+}

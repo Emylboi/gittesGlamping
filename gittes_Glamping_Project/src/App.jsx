@@ -3,7 +3,6 @@ import HomePage from "./pages/home/HomePage";
 import StaysPage from "./pages/stays/StaysPage";
 import ActivitiesPage from "./pages/activities/ActivitiesPage";
 import ContactsPage from "./pages/contact/ContactsPage";
-import Navigation from "./components/common/Navigation/Navigation";
 import BackofficeUsersPage from "./pages/backoffice/pages/BackofficeUsersPage";
 import BackofficePage from "./pages/backoffice/BackofficePage";
 import BoUsersForm from "./components/backoffice/Users/outlet/BoUsersForm";
@@ -13,6 +12,8 @@ import BoStaysForm from "./components/backoffice/Stays/outlet/BoStaysForm";
 import ProtectedRoute from "./components/ProtectedRoute";
 import useAuth from "./hooks/useAuth";
 import Login from "./components/login/Login";
+import Header from "./components/common/Header/Header";
+import StayPage from "./pages/stay/StayPage";
 
 // Common Pages.
 
@@ -30,11 +31,15 @@ const App = () => {
       element: <StaysPage></StaysPage>,
     },
     {
+      path: "/stays/:id",
+      element: <StayPage></StayPage>,
+    },
+    {
       path: "/activities",
       element: <ActivitiesPage></ActivitiesPage>,
     },
     {
-      path: "/contacts",
+      path: "/contact",
       element: <ContactsPage></ContactsPage>,
     },
     {
@@ -93,7 +98,7 @@ const App = () => {
   return (
     <>
       <div>
-        <Navigation></Navigation>
+        <Header></Header>
         <div className="globale-page-wrapper">{routes}</div>
         {/* <Footer></Footer> */}
       </div>

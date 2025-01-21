@@ -1,102 +1,45 @@
-.stays {
+.staySection {
+  height: auto;
+  padding: 5vh 0;
+  width: 100%;
+}
 
-    padding: 20px;
-  
-    .debugStay {
-        padding : 20px;
-        border : 2px dashed var(--mc-color-green); 
-        width:100%;
-    }
-  
-    .stay {
-        background-color: rgb(148, 120, 168);
-        width:100%;
-        border-radius: 16px;
-  
-        .content {
-            padding: 20px;
-  
-            color : #fff;
-            border-radius: 0 0 16px 16px;
-        }
-        img {
-            width : 100%;
-            border-radius: 16px 16px 0 0;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-        }
-    }
-  
-    .list {
-  
-        display: flex;
-        flex-wrap: wrap;
-        gap : 20px;
-  
-        > div {
-            width: 100%;
-        }
-       
-    }
-  
-    .debugBtn {
-        background-color: black;
-        width : 100%;
-        color:#fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        border-radius: 8px;
-        padding: 10px;
-        margin: 10px 0;
-        cursor: pointer;
-    }
-    
-    @media(min-width:768px) {
-       .list {
-  
-            > div {
-                width: calc(50% - 10px);
-            }
-  
-       }
-  
-    }
-  
-    @media(min-width:1024px) {
-        .list {
-  
-             > div {
-                 width: calc(25% - 15px);
-             }
-  
-        }
-  
-     }
-  
-     @media(min-width:1224px) {
-        .list {
-  
-             > div {
-                 width: calc(20% - 16px);
-             }
-  
-        }
-  
-     }
-  }
-  
-  .debugBtn {
-    background-color: black;
-    width : 300px;
-    color:#fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px 0;
-    cursor: pointer;
-  }
+.stayContainer {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.stay {
+  height: 50%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  position: absolute;
+}
+
+.titleBox {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  /* position: relative;
+  bottom: 0;
+  margin-top: -50px; */
+}
+
+.viewButton {
+  background-color: var(--sectionDescriptionButton-color);
+  color: var(--whiteFont-color);
+  width: 80%;
+  height: 80px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  font-size: 3rem;
+}

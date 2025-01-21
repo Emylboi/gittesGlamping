@@ -11,6 +11,7 @@ const useAuth = () => {
   const [auth, setAuth] = useLocalStorage("auth", {});
   const navigate = useNavigate();
 
+  /* Function that handles the signin */
   const signIn = async (e) => {
     e.preventDefault();
     setError("");
@@ -39,11 +40,13 @@ const useAuth = () => {
     }
   };
 
+  /* Function that handles the signout */
   const signOut = () => {
     setAuth({});
     setUser({});
   };
 
+  /* Returns the token from the auth user if it exists. */
   const token = auth.token ? auth.token : "";
   const signedIn = !!auth.token;
 

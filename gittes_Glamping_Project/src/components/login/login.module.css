@@ -1,6 +1,7 @@
 .container {
     margin-top: 5vh;
     width: 100%;
+    height: 50vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -15,10 +16,14 @@
   }
   
   .form {
-    width: 70%;
+    width: 30%;
     color: #255d44;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+  }
+
+  input{
+    font-size: 3rem;
   }
   

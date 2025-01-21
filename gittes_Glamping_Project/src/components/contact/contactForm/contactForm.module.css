@@ -1,0 +1,40 @@
+.contactForm{
+    background-color: var(--sectionDescription-color);
+    color: var(--whiteFont-color);
+    padding: 0 0 5vh 0;
+}
+
+.successMessage{
+    padding: 30px;
+    text-align: center;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+label{
+    width: 80%;
+    border: none;
+    border-radius: 50px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+label > input, label > textarea{
+    background-color: var(--sectionDescription-color);
+    border: 1px solid  var(--whiteFont-color);
+    width: 100%;
+    border-radius: 50px;
+    color: var(--whiteFont-color);
+    height: 5vh;
+}
+
+label > input:focus, 
+label > textarea:focus {
+    color: var(--whiteFont-color); /* Change text color when in focus */
+    outline: none; /* Remove default focus outline */
+}

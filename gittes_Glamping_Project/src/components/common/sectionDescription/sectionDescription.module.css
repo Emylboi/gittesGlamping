@@ -1,0 +1,40 @@
+.sectionDescription{
+    background-color: var(--sectionDescription-color);
+    color: var(--whiteFont-color);
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+    padding: 5vh 0;
+    gap: 5vh;
+}
+
+.title{
+    font-size: 7rem;
+    line-height: 7rem;
+}
+
+.title, .description{
+    width: 90%;
+}
+
+.image{
+    width: 200px;
+    height: 200px;
+    border-radius: 500px;
+    object-fit: cover;
+}
+
+.button{
+    background-color: var(--sectionDescriptionButton-color);
+    color: var(--whiteFont-color);
+    width: 80%;
+    height: 80px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-size: 3rem;
+    margin: 3vh 0;
+}

@@ -10,8 +10,8 @@ const BackofficePage = () => {
     <div className={styles.page}>
       <BoNavigation></BoNavigation>
       <div>
-        <h1>Hej {user.name}</h1>
-        <button onClick={() => signOut()}>Log Ud</button>
+        <h1>Hej {user.name}</h1> {/* Login message */}
+        <button onClick={() => signOut()}>Log Ud</button> {/*  */}
       </div>
       <Outlet></Outlet>
     </div>

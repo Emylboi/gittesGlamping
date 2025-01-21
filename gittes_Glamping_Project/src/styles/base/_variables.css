@@ -1,14 +1,23 @@
 :root {
 
 
-    --font-tillium: "Titillium Web";
-    --font-quick: "Quicksand";
+    --font-zenloop: "Zen Loop";
+    --font-nanum: "Nanum Gothic";
 
-    --primary-font: var(--font-tillium);
+    --primary-font: var(--font-zenloop);
+    --secondary-font: var(--font-nanum);
 
-    --mc-color-green : #3a6465;
-    --mc-color-yellow : #e6a044;
-    --mc-color-orange : #ff6634;
+    /* Background colors */
+    --sectionDescription-color : #33626c; 
+    --sectionDescriptionButton-color : #829b97;
+    --sectionTitleBox-color : #c5b496;
+    --sectionFooter-color : #2a4f57;
+    --sectionNavigation-color : #808080;
+    --sectionShowNavigation-color : #637874;
+
+    /* Text colors */
+    --whiteFont-color : #fff;
+    --blackFont-color : #000;
      
 
     --base-text-color : #213547;

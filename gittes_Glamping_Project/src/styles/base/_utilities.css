@@ -5,12 +5,12 @@
 }
 
 /* FONTS */
-.quicksans {
-    font-family: var(--font-quick);
+.zenloop {
+    font-family: var(--zenloop);
 }
 
-.tillium {
-    font-family: var(--font-tillium);
+.nanum {
+    font-family: var(--font-nanum);
 }
 
 
