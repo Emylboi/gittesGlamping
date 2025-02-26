@@ -2,6 +2,7 @@
 import useAuth from "../../hooks/useAuth";
 import styles from "./login.module.css";
 
+// This is the login component. It uses the useAuth hook to handle the login functionality.
 const Login = () => {
   const { setEmail, setPassword, error, signIn } = useAuth();
 

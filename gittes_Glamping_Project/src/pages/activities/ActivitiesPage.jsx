@@ -2,8 +2,8 @@
 import Activities from "../../components/activities/Activities/Activities";
 import HeroBackground from "../../components/common/heroBackground/HeroBackground";
 import SectionDescription from "../../components/common/sectionDescription/SectionDescription";
-import styles from "./activitiesPage.module.css";
 
+//
 const ActivitiesPage = () => {
   return (
     <div>

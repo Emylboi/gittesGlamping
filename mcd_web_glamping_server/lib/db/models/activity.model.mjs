@@ -1,6 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 mongoose.set('runValidators', true);
 
+// The 'props' that the activity will have
 const activityScheme = new Schema({
     title: { type: String},
     description: { type: String},

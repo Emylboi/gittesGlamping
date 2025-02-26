@@ -1,9 +1,14 @@
 import { useState } from "react";
 import styles from "./activitiesDescription.module.css";
 
+// This component shows the description of the activities. 
+// We get date, time and description as props, which are passed from the Activity component.
 const ActivitiesDescription = ({ date, time, description }) => {
-  const [isOpen, setIsOpen] = useState(false); // State to track accordion open/close
 
+  // State to track accordion open/close
+  const [isOpen, setIsOpen] = useState(false); 
+
+  // Function that toggles the accordion open/close
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };

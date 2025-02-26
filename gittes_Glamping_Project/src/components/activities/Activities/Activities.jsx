@@ -5,13 +5,18 @@ import styles from "./activities.module.css";
 import useTinyFetch from "../../../hooks/tinyFetch.hook";
 
 const Activities = () => {
+  // useState that contains an empty array as default value.
   const [activities, setActivities] = useState([]);
+  
+  // Uses useTinyFetch hook to fetch data from the server.
   const { data, fetchData } = useTinyFetch();
 
+  // Fetches data from /activities endpoint from the server.
   useEffect(() => {
     fetchData("/activities");
   }, []);
 
+  // Sets the activities state to the data fetched from the server.
   useEffect(() => {
     setActivities(data);
   }, [data]);

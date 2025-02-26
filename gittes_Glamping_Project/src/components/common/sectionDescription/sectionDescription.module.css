@@ -38,3 +38,9 @@
     font-size: 3rem;
     margin: 3vh 0;
 }
+
+@media(min-width: 1024px){
+    .title, .description, .button{
+        max-width: 1024px;
+    }
+}

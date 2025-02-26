@@ -19,3 +19,12 @@
 .title{
     font-size: 5rem;
 }
+
+@media(min-width: 1024px) {
+    .content{
+        max-width: 1024px;
+        width: 100%;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 50px;
+    }
+}

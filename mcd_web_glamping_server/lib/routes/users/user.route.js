@@ -81,7 +81,7 @@ userRouter.post("/user", upload.single("file"), async (req, res) => {
 });
 
 // PUT
-userRouter.put("/user", upload.single("file"), async (req, res) => {
+userRouter.put("/user", auth, upload.single("file"), async (req, res) => {
   console.log(req.body);
   const updatedUser = {
     ...req.body,
@@ -106,7 +106,7 @@ userRouter.put("/user", upload.single("file"), async (req, res) => {
 });
 
 // DELETE
-userRouter.delete("/user/:id", async (req, res) => {
+userRouter.delete("/user/:id", auth, async (req, res) => {
   if (!req.params.id) {
     return res.status(200).send({ message: "No ID provided", data: {} });
   }

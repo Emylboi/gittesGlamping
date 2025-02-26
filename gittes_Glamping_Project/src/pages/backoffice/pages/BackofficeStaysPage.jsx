@@ -2,12 +2,18 @@ import { useEffect, useState } from "react";
 import useTinyFetch from "../../../hooks/tinyFetch.hook";
 import { Outlet, useNavigate } from "react-router-dom";
 import BoStayList from "../../../components/backoffice/Stays/lists/BoStayList";
+import useAuth from "../../../hooks/useAuth";
 
 const BackofficeStaysPage = () => {
   const [stays, setStays] = useState([]);
   const { data, fetchData } = useTinyFetch();
   const navigate = useNavigate();
+  const { token } = useAuth();
 
+  const headers = {
+    "Authorization": `Bearer ${token}`, // Include token in Authorization header
+  };
+  
   useEffect(() => {
     fetchData("/stays");
   }, []);
@@ -21,9 +27,10 @@ const BackofficeStaysPage = () => {
       let response = await fetch("http://localhost:3042/stay", {
         method: "POST",
         body: formData,
+        headers,
       });
-      
-      if ((response.ok)) {
+
+      if (response.ok) {
         fetchData("/stays");
         navigate(`/backoffice/stays`);
       }
@@ -34,15 +41,13 @@ const BackofficeStaysPage = () => {
 
   const deleteStay = (id) => {
     const delStay = async () => {
+      console.log("test console");
       await fetch(`http://localhost:3042/stay/${id}`, {
         method: "DELETE",
+        headers,
       });
 
-      /* let updatedList = stays.filter((p) => p._id !== id);
-
-      setStays([...updatedList]); */
-
-      fetchData("/stays")
+      fetchData("/stays");
     };
 
     delStay(id);
@@ -53,6 +58,7 @@ const BackofficeStaysPage = () => {
       let response = await fetch("http://localhost:3042/stay", {
         method: "PUT",
         body: formData,
+        headers,
       });
 
       const res = await response.json();

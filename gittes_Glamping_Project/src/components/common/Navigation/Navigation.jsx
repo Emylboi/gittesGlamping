@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { FaXmark } from "react-icons/fa6";
 import { useState } from "react";
 
-
+// Navigation component  
 const Navigation = () => {
     const [activeBM, setActiveBM] = useState(false);
 

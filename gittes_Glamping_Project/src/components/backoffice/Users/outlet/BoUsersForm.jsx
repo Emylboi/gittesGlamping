@@ -46,7 +46,14 @@ const BoUsersForm = () => {
       <h2>{editMode ? "Redigér User" : "Opret User"}</h2>
       <form onSubmit={onHandleSubmit} ref={formRef}>
         <label>
-          <img src={image ? URL.createObjectURL(image) : "http://localhost:3042/users/no-image.jpeg"} width={150}></img>
+          <img
+            src={
+              image
+                ? URL.createObjectURL(image)
+                : "http://localhost:3042/users/no-image.jpeg"
+            }
+            width={150}
+          ></img>
           <input type="file" name={"file"} onChange={onImageChange}></input>
         </label>
         <label>

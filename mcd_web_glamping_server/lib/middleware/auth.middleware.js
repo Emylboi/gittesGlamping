@@ -1,37 +1,34 @@
 import jwt from "jsonwebtoken";
 
 const auth = (req, res, next) => {
-  
-  const tokenHeader = req.headers['authorization'];
+  const tokenHeader = req.headers["authorization"];
   const useAuthHeader = process.env.USE_JWT || true;
- 
-  if(useAuthHeader !== 'false')
-  {
 
+  if (useAuthHeader !== "false") {
     if (!tokenHeader) {
-    
-      return res.json({'status' : 'error', 'message' : 'No access without token.'});
-  
+      return res.json({ status: "error", message: "No access without token." });
     }
     try {
-  
-      const token = tokenHeader.split(' ')[1];
-  
+      const token = tokenHeader.split(" ")[1];
+
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = decoded; 
-  
+      req.user = decoded;
+      if (req.user.role !== "admin") {
+        return res.json({
+          status: "errorr",
+          message: "Not a valid Token - are you signed in?",
+        });
+      }
     } catch (err) {
-  
-      console.log('Error', err);
-      return res.json({'status' : 'error', 'message' : 'Not a valid Token - are you signed in?'});
-  
+      console.log("Error", err);
+      return res.json({
+        status: "error",
+        message: "Not a valid Token - are you signed in?",
+      });
     }
   }
 
-
   return next();
-
-  
-}
+};
 
 export default auth;

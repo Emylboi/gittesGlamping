@@ -14,3 +14,9 @@
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
+
+@media(min-width: 1024px){
+    .content{
+        max-width: 1024px;
+    }
+}

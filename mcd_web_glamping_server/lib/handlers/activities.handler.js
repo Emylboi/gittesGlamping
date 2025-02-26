@@ -4,9 +4,10 @@
 
 */
 
+// dbConnect is used to connect to the database
 import dbConnect from "../db/dbConnect.js";
+// activityModel is used to interact with the database
 import activityModel from "../db/models/activity.model.mjs";
-
 
 export const getActivities = async () => {
 

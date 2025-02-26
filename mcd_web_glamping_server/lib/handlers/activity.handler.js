@@ -4,11 +4,13 @@
 
 */
 
+// dbConnect is used to connect to the database
 import dbConnect from "../db/dbConnect.js";
+// activityModel is used to interact with the database
 import activityModel from "../db/models/activity.model.mjs";
 import { deleteActivityImage } from "./file.handler.js";
 
-
+// Used to find activity
 export const getActivity = async (id) => {
 
     let result = {status: 'error', message: `An Error Getting Activity occured`, data: []};
@@ -37,6 +39,7 @@ export const getActivity = async (id) => {
 
 };
 
+// Used to add activity
 export const addActivity = async (body) => {
 
     let result = {status: 'error', message: "An Error Occurred", data: []};
@@ -59,6 +62,7 @@ export const addActivity = async (body) => {
 
 }
 
+// Used to update activity
 export const updateActivity = async (body) => {
 
     let result = {status: 'error', message: "An Error Occurred", data: []};
@@ -84,6 +88,7 @@ export const updateActivity = async (body) => {
 
 }
 
+// Used to delete activity
 export const deleteActivity = async (id) => {
 
     let result = {status: 'error', message: `An Error Deleting Activity ${id} occurred`, data: []};

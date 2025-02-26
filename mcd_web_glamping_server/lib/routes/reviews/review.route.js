@@ -30,7 +30,7 @@ reviewRoute.post('/review', upload.single('file'), async (req, res) => {
 });
 
 // PUT / UPDATE
-reviewRoute.put('/review', upload.single('file'), async (req, res) => {
+reviewRoute.put('/review', auth, upload.single('file'), async (req, res) => {
     
     const model = {
         ...req.body

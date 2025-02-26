@@ -1,5 +1,6 @@
 import styles from "./sectionDescription.module.css";
 
+// Component for a short description on pages. Always takes a title and description, with the option to add an image and button.
 const SectionDescription = ({
   title,
   description,

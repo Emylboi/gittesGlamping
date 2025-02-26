@@ -14,3 +14,9 @@
     width: 100%;
     display: block;
 }
+
+@media(min-width: 1024px){
+    .activity{
+        max-width: 1024px;
+    }
+}
