@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
+import styles from "../../boForm.module.css";
 
 const BoActivitiesForm = () => {
   // We get the id from the URL.
@@ -65,9 +66,9 @@ const BoActivitiesForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.content}>
       <h2>{editMode ? "Redigér Activity" : "Opret Activity"}</h2>
-      <form onSubmit={onHandleSubmit} ref={formRef}>
+      <form onSubmit={onHandleSubmit} ref={formRef} className={styles.form}>
         <label>
           <img
             src={
@@ -75,14 +76,15 @@ const BoActivitiesForm = () => {
                 ? URL.createObjectURL(image)
                 : "http://localhost:3042/activities/no-activity.jpg"
             }
-            width={150}
+            width={200}
           ></img>
-          <input type="file" name={"file"} onChange={onImageChange}></input>
+          <input className={styles.input} type="file" name={"file"} onChange={onImageChange}></input>
         </label>
         <label>
           {" "}
           Title
           <input
+            className={styles.input}
             type="text"
             value={activity?.title || ""}
             onChange={(e) =>
@@ -94,6 +96,7 @@ const BoActivitiesForm = () => {
           {" "}
           Description
           <input
+            className={styles.input}
             type="text"
             value={activity?.description || ""}
             onChange={(e) =>
@@ -105,6 +108,7 @@ const BoActivitiesForm = () => {
           {" "}
           Date
           <input
+            className={styles.input}
             type="text"
             value={activity?.date || ""}
             onChange={(e) => setActivity({ ...activity, date: e.target.value })}
@@ -114,13 +118,16 @@ const BoActivitiesForm = () => {
           {" "}
           Time
           <input
+            className={styles.input}
             type="text"
             value={activity?.time || ""}
             onChange={(e) => setActivity({ ...activity, time: e.target.value })}
           ></input>
         </label>
-        <button>{editMode ? "Redigér Activity" : "Opret Activity"}</button>{" "}
-        <button type="reset">RESET</button>
+        <div className={styles.buttons}>
+          <button className={styles.button}>{editMode ? "Redigér Activity" : "Opret Activity"}</button>{" "}
+          <button className={styles.button} type="reset">RESET</button>
+        </div>
       </form>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
+import styles from "../../boForm.module.css";
 
 const BoReviewsForm = () => {
   const { id } = useParams(); /* We get the id from the URL */
@@ -42,13 +43,14 @@ const BoReviewsForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.content}>
       <h2>{editMode ? "Redigér Review" : "Opret Review"}</h2>
-      <form onSubmit={onHandleSubmit} ref={formRef}>
+      <form onSubmit={onHandleSubmit} ref={formRef} className={styles.form}>
         <label>
           {" "}
           Name
           <input
+            className={styles.input}
             type="text"
             value={review?.name || ""}
             onChange={(e) => setReview({ ...review, name: e.target.value })}
@@ -58,6 +60,7 @@ const BoReviewsForm = () => {
           {" "}
           Age
           <input
+            className={styles.input}
             type="text"
             value={review?.age || ""}
             onChange={(e) => setReview({ ...review, age: e.target.value })}
@@ -67,15 +70,20 @@ const BoReviewsForm = () => {
           {" "}
           Review
           <input
+            className={styles.input}
             type="text"
             value={review?.review || ""}
-            onChange={(e) =>
-              setReview({ ...review, review: e.target.value })
-            }
+            onChange={(e) => setReview({ ...review, review: e.target.value })}
           ></input>
         </label>
-        <button>{editMode ? "Redigér Review" : "Opret Review"}</button>{" "}
-        <button type="reset">RESET</button>
+        <div className={styles.buttons}>
+          <button className={styles.button}>
+            {editMode ? "Redigér Review" : "Opret Review"}
+          </button>{" "}
+          <button className={styles.button} type="reset">
+            RESET
+          </button>
+        </div>
       </form>
     </div>
   );

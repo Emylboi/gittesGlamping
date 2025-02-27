@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
+import styles from "../../boForm.module.css";
 
 const BoUsersForm = () => {
   const { id } = useParams();
@@ -42,9 +43,9 @@ const BoUsersForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.content}>
       <h2>{editMode ? "Redigér User" : "Opret User"}</h2>
-      <form onSubmit={onHandleSubmit} ref={formRef}>
+      <form onSubmit={onHandleSubmit} ref={formRef} className={styles.form}>
         <label>
           <img
             src={
@@ -54,12 +55,18 @@ const BoUsersForm = () => {
             }
             width={150}
           ></img>
-          <input type="file" name={"file"} onChange={onImageChange}></input>
+          <input
+            className={styles.input}
+            type="file"
+            name={"file"}
+            onChange={onImageChange}
+          ></input>
         </label>
         <label>
           {" "}
           Name
           <input
+            className={styles.input}
             type="text"
             value={user?.name || ""}
             onChange={(e) => setUser({ ...user, name: e.target.value })}
@@ -69,6 +76,7 @@ const BoUsersForm = () => {
           {" "}
           Password
           <input
+            className={styles.input}
             type="text"
             name={"password"}
             value={user?.password || ""}
@@ -79,6 +87,7 @@ const BoUsersForm = () => {
           {" "}
           Email
           <input
+            className={styles.input}
             type="text"
             name={"email"}
             value={user?.email || ""}
@@ -89,14 +98,17 @@ const BoUsersForm = () => {
           {" "}
           Role
           <input
+            className={styles.input}
             type="text"
             name={"role"}
             value={user?.role || ""}
             onChange={(e) => setUser({ ...user, role: e.target.value })}
           ></input>
         </label>
-        <button>{editMode ? "Redigér User" : "Opret User"}</button>{" "}
-        <button type="reset">RESET</button>
+        <div className={styles.buttons}>
+          <button className={styles.button}>{editMode ? "Redigér User" : "Opret User"}</button>{" "}
+          <button className={styles.button} type="reset">RESET</button>
+        </div>
       </form>
     </div>
   );

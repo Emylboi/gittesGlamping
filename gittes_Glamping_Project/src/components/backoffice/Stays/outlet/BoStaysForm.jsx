@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
+import styles from "../../boForm.module.css";
 
 const BoStaysForm = () => {
   const { id } = useParams(); /* We get the id from the URL */
@@ -45,9 +46,9 @@ const BoStaysForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.content}>
       <h2>{editMode ? "Redigér Stay" : "Opret Stay"}</h2>
-      <form onSubmit={onHandleSubmit} ref={formRef}>
+      <form onSubmit={onHandleSubmit} ref={formRef} className={styles.form}>
         <label>
           <img
             src={
@@ -57,12 +58,18 @@ const BoStaysForm = () => {
             }
             width={150}
           ></img>
-          <input type="file" name={"file"} onChange={onImageChange}></input>
+          <input
+            className={styles.input}
+            type="file"
+            name={"file"}
+            onChange={onImageChange}
+          ></input>
         </label>
         <label>
           {" "}
           Title
           <input
+            className={styles.input}
             type="text"
             value={stay?.title || ""}
             onChange={(e) => setStay({ ...stay, title: e.target.value })}
@@ -72,6 +79,7 @@ const BoStaysForm = () => {
           {" "}
           Description
           <input
+            className={styles.input}
             type="text"
             value={stay?.description || ""}
             onChange={(e) => setStay({ ...stay, description: e.target.value })}
@@ -81,6 +89,7 @@ const BoStaysForm = () => {
           {" "}
           Number of Persons
           <input
+            className={styles.input}
             type="text"
             value={stay?.numberOfPersons || ""}
             onChange={(e) =>
@@ -92,6 +101,7 @@ const BoStaysForm = () => {
           {" "}
           Price
           <input
+            className={styles.input}
             type="text"
             value={stay?.price || ""}
             onChange={(e) => setStay({ ...stay, price: e.target.value })}
@@ -101,13 +111,16 @@ const BoStaysForm = () => {
           {" "}
           Includes
           <input
+            className={styles.input}
             type="text"
             value={stay?.includes || ""}
             onChange={(e) => setStay({ ...stay, includes: e.target.value })}
           ></input>
         </label>
-        <button>{editMode ? "Redigér Stay" : "Opret Stay"}</button>{" "}
-        <button type="reset">RESET</button>
+        <div className={styles.buttons}>
+          <button className={styles.button}>{editMode ? "Redigér Stay" : "Opret Stay"}</button>{" "}
+          <button className={styles.button} type="reset">RESET</button>
+        </div>
       </form>
     </div>
   );

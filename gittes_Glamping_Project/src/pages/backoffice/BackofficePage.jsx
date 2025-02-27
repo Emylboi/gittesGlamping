@@ -4,15 +4,15 @@ import BoNavigation from "../../components/backoffice/Navigation/boNavigation";
 import useAuth from "../../hooks/useAuth";
 
 const BackofficePage = () => {
-  const { signOut, user } = useAuth();
+  /* const { signOut, user } = useAuth(); */
 
   return (
     <div className={styles.page}>
       <BoNavigation></BoNavigation>
-      <div>
+      {/* <div className={styles.welcomeMSG}>
         <h1>Hej {user.name}</h1>
         <button onClick={() => signOut()}>Log Ud</button>
-      </div>
+      </div> */}
       <Outlet></Outlet>
     </div>
   );
