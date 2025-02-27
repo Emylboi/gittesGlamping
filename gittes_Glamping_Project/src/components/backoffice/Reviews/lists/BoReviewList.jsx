@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./boReviewList.module.css";
+import Swal from "sweetalert2";
+
 const BoReviewList = ({ reviews, deleteReview }) => {
   const navigate = useNavigate();
 
@@ -9,6 +11,24 @@ const BoReviewList = ({ reviews, deleteReview }) => {
 
   const createReview = () => {
     navigate(`/backoffice/reviews/add`);
+  };
+
+const handleDelete = (id, name) => {
+    Swal.fire({
+      title: `Vil du slette reviewet fra "${name}"?`,
+      text: "Denne handling kan ikke fortrydes!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Ja, slet reviewet!",
+      cancelButtonText: "Annuller",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteReview(id);
+        Swal.fire("Slettet!", "Reviewet er blevet slettet.", "success");
+      }
+    });
   };
 
   return (
@@ -32,7 +52,7 @@ const BoReviewList = ({ reviews, deleteReview }) => {
                 <td>{review}</td>
                 <td className={"table-actions"}>
                   <button onClick={() => editReview(_id)}>REDIGÈR</button>
-                  <button onClick={() => deleteReview(_id)}>SLET</button>
+                  <button onClick={() => handleDelete(_id, name)}>SLET</button>
                 </td>
               </tr>
             );

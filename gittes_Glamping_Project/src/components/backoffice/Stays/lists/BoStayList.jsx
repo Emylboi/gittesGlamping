@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./boStayList.module.css";
+import Swal from "sweetalert2";
 
 /* This component shows the list of all our stays in the backoffice section. */
 const BoStayList = ({ stays, deleteStay }) => {
@@ -12,6 +13,24 @@ const BoStayList = ({ stays, deleteStay }) => {
   const createStay = () => {
     navigate(`/backoffice/stays/add`);
   };
+
+  const handleDelete = (id, title) => {
+      Swal.fire({
+        title: `Vil du slette opholdet "${title}"?`,
+        text: "Denne handling kan ikke fortrydes!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ja, slet opholdet!",
+        cancelButtonText: "Annuller",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          deleteStay(id);
+          Swal.fire("Slettet!", "Dit ophold er blevet slettet.", "success");
+        }
+      });
+    };
 
   return (
     <div className={styles.list}>
@@ -52,7 +71,7 @@ const BoStayList = ({ stays, deleteStay }) => {
                 <td>{includes}</td>
                 <td className={"table-actions"}>
                   <button onClick={() => editStay(_id)}>REDIGÈR</button>
-                  <button onClick={() => deleteStay(_id)}>SLET</button>
+                  <button onClick={() => handleDelete(_id, title)}>SLET</button>
                 </td>
               </tr>
             );

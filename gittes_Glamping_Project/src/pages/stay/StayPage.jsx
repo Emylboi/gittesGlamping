@@ -1,3 +1,4 @@
+import Footer from "../../components/common/Footer/Footer";
 import styles from "./stayPage.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -18,18 +19,21 @@ const StayPage = () => {
     <div className={styles.stayPage}>
       <img src={stay.image} className={styles.stayPicture} />
       <div className={styles.stayContent}>
-        <h1 className={styles.stayTitle}>{stay.title}</h1>
-        <p className={styles.stayDescription}>{stay.description}</p>{" "}
-        <p className={styles.stayPrice}>Pris: {stay.price},-</p>
-        <div className={styles.stayPersons}>
-          {stay.includes.map((include) => (
-            <p key={include}>{include}</p>
-          ))}
+        <div className={styles.stayInfo}>
+          <h1 className={styles.stayTitle}>{stay.title}</h1>
+          <p className={styles.stayDescription}>{stay.description}</p>{" "}
+          <p className={styles.stayPrice}>Pris: {stay.price},-</p>
+          <div className={styles.stayPersons}>
+            {stay.includes.map((include) => (
+              <p key={include}>{include}</p>
+            ))}
+          </div>
+          <button className={styles.bookButton} onClick={handleClick}>
+            Book nu
+          </button>
         </div>
-        <button className={styles.bookButton} onClick={handleClick}>
-          Book nu
-        </button>
       </div>
+      <Footer/>
     </div>
   );
 };

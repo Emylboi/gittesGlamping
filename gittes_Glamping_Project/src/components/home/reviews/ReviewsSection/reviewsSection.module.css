@@ -1,4 +1,9 @@
 .reviewsSection{
     background-color: #ced3cd;
     padding: 5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 2vh;
 }

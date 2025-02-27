@@ -1,52 +1,105 @@
 .heroBackground {
-    position: relative;
-    /* background-image: url("./image_00.jpg"); */
-    background-position: center;
-    background-size: cover;
-    height: 80vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroBackground::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    86,
+    82,
+    82,
+    0.555
+  ); /* Adjust the alpha value for darkness */
+  z-index: 1; /* Place the overlay above the background image */
+}
+
+.content {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  color: var(--whiteFont-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.title {
+  font-weight: 250;
+}
+
+.button {
+  border: 1px solid var(--whiteFont-color);
+  background-color: transparent;
+  color: var(--whiteFont-color);
+  width: 80%;
+  height: 80px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  font-size: 3rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  min-height: 80vh;
+  background-color: rgba(86, 82, 82, 0.555);
+  z-index: 1;
+}
+
+.singleImage {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    86,
+    82,
+    82,
+    0.555
+  );
+  z-index: 1;
+}
+
+.sliderWrapper{
+  height: 100%;
+  width: 100%;
+  position: relative;
   
-  .heroBackground::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(
-      86,
-      82,
-      82,
-      0.555
-    ); /* Adjust the alpha value for darkness */
-    z-index: 1; /* Place the overlay above the background image */
-  }
-  
-  .content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: var(--whiteFont-color);
-    width: 100%;
-  }
-  
-  .title {
-    font-weight: 250;
-  }
-  
-  .button {
-    border: 1px solid var(--whiteFont-color);
-    background-color: transparent;
-    color: var(--whiteFont-color);
-    width: 80%;
-    height: 80px;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    font-size: 3rem;
-  }
-  
+}

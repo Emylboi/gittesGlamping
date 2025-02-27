@@ -1,9 +1,19 @@
 .container{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--sectionFooter-color);
     color: var(--whiteFont-color);
 }
 
 .title{
     font-weight: 200;
+}
+
+.logoTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 0;
 }

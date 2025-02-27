@@ -19,15 +19,28 @@
 .stayContent {
   background-color: var(--sectionDescription-color);
   color: var(--whiteFont-color);
-  padding: 25px 0;
   margin: 0;
   border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
   position: relative;
   bottom: 0;
   margin-top: -50px;
   height: auto;
   padding: 30px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.stayInfo{
+  max-width: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 25px;
 }
 
 .stayContent > h1,
@@ -45,6 +58,7 @@
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   font-size: 3rem;
+  
 }
 
 .stayPersons{

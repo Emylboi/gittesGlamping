@@ -35,7 +35,7 @@ const Stay = ({ stay }) => {
 
 const Stays = () => {
   const [stays, setStays] = useState([]);
-  const { data, fetchData } = useTinyFetch();
+  const { data, fetchData, loading, error, noDataMessage } = useTinyFetch();
 
   useEffect(() => {
     fetchData("/stays");
@@ -47,9 +47,14 @@ const Stays = () => {
 
   return (
     <div className={styles.stays}>
-      {stays.map((stay) => (
-        <Stay key={stay._id} stay={stay} />
-      ))}
+      {loading && <p>Loading...</p>}
+
+      {noDataMessage && <p>{noDataMessage}</p>}
+
+      {stays.length > 0 &&
+        stays.map((stay) => ( 
+          <Stay key={stay._id} stay={stay} />
+        ))}
     </div>
   );
 };

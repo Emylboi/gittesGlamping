@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./boUserList.module.css";
+import Swal from "sweetalert2";
 const BoUserList = ({ users, deleteUser }) => {
   const navigate = useNavigate();
 
@@ -9,6 +10,24 @@ const BoUserList = ({ users, deleteUser }) => {
 
   const createUser = () => {
     navigate(`/backoffice/users/add`);
+  };
+
+  const handleDelete = (id, name) => {
+    Swal.fire({
+      title: `Vil du slette brugeren "${name}"?`,
+      text: "Denne handling kan ikke fortrydes!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Ja, slet brugeren!",
+      cancelButtonText: "Annuller",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteUser(id);
+        Swal.fire("Slettet!", "Brugeren er blevet slettet.", "success");
+      }
+    });
   };
 
   return (
@@ -39,7 +58,7 @@ const BoUserList = ({ users, deleteUser }) => {
                 <td>{role}</td>
                 <td className={"table-actions"}>
                   <button onClick={() => editUser(_id)}>REDIGÈR</button>
-                  <button onClick={() => deleteUser(_id)}>SLET</button>
+                  <button onClick={() => handleDelete(_id, name)}>SLET</button>
                 </td>
               </tr>
             );
