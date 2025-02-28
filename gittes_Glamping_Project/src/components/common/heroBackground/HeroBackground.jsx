@@ -37,7 +37,6 @@ const HeroBackground = ({ title, button, images = [], isSlider = false }) => {
             ))}
           </Swiper>
 
-          {/* 🔥 Static Content (Title + Button) remains outside the Swiper */}
           <div className={styles.content}>
             <h1 className={styles.title}>{title}</h1>
             {button && (

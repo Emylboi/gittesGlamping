@@ -4,13 +4,10 @@ import styles from "./breadcrumbs.module.css";
 const Breadcrumbs = ({ paths }) => {
   const location = useLocation();
 
-  // Function to normalize the pathname (strip trailing slashes and query params)
   const normalizePath = (path) => {
     const normalizedPath = path.split('?')[0].replace(/\/$/, "");
     return normalizedPath;
   };
-
-  console.log("Current location:", location.pathname); // Debugging line
 
   return (
     <nav>
